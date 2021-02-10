@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../../_actions/user_action'
+import { withRouter } from 'react-router-dom'
 
 function RegisterPage(props) {
   const dispatch = useDispatch()
@@ -43,6 +44,11 @@ function RegisterPage(props) {
       }
     })
   }
+
+  const onClickHandler = () => {
+    props.history.push('/login')
+  }
+
   return (
     <div
       style={{
@@ -57,6 +63,7 @@ function RegisterPage(props) {
         style={{ display: 'flex', flexDirection: 'column' }}
         onSubmit={onSubmitHandler}
       >
+        <h1 style={{ textAlign: 'center' }}>Register Page</h1>
         <label>Email</label>
         <input type="email" value={Email} onChange={onEmailHandler} />
 
@@ -74,9 +81,12 @@ function RegisterPage(props) {
         />
         <br />
         <button type="submit">Register</button>
+        <button type="button" style={{ color: 'red' }} onClick={onClickHandler}>
+          back To Login
+        </button>
       </form>
     </div>
   )
 }
 
-export default RegisterPage
+export default withRouter(RegisterPage)

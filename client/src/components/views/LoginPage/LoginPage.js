@@ -24,11 +24,15 @@ function LoginPage(props) {
     }
     dispatch(loginUser(body)).then(response => {
       if (response.payload.loginSuccess) {
-        props.history.push('/')
+        props.history.push('/landing')
       } else {
         alert('Error : 로그인 실패!!')
       }
     })
+  }
+
+  const onClickHandler = () => {
+    props.history.push('/register')
   }
 
   return (
@@ -45,13 +49,16 @@ function LoginPage(props) {
         style={{ display: 'flex', flexDirection: 'column' }}
         onSubmit={onSubmitHandler}
       >
+        <h1 style={{ textAlign: 'center' }}>Login Page</h1>
         <label>Email</label>
         <input type="email" value={Email} onChange={onEmailHandler} />
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />
-        <button type="button">SignUp</button>
         <button type="submit">Login</button>
+        <button type="button" style={{ color: 'red' }} onClick={onClickHandler}>
+          SignUp
+        </button>
       </form>
     </div>
   )

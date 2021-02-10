@@ -23,10 +23,10 @@ export default function (SpecificComponent, option, adminRoute = null) {
         } else {
           //로그인한 상태
           if (adminRoute && !response.payload.isAdmin) {
-            props.history.push('/')
+            props.history.push('/landing')
           } else {
             if (!option) {
-              props.history.push('/')
+              props.history.push('/landing')
             }
           }
         }

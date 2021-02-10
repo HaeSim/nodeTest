@@ -3,10 +3,6 @@ import axios from 'axios'
 import { withRouter } from 'react-router-dom'
 
 function LandingPage(props) {
-  useEffect(() => {
-    axios.get('/api/hello').then(response => console.log(response.data))
-  }, [])
-
   const onClickHandler = () => {
     axios.get('/api/users/logout').then(response => {
       if (response.data.success) {
@@ -28,8 +24,8 @@ function LandingPage(props) {
         flexDirection: 'column',
       }}
     >
-      <h2>시작 페이지</h2>
-      <button onClick={onClickHandler}>로그아웃</button>
+      <h2 style={{ textAlign: 'center' }}>Welcome to Landing Page</h2>
+      <button onClick={onClickHandler}>Logout</button>
     </div>
   )
 }

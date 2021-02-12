@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../../_actions/user_action'
 import { withRouter } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
 
 function RegisterPage(props) {
   const dispatch = useDispatch()
@@ -84,17 +83,17 @@ function RegisterPage(props) {
           onChange={onConfirmPasswordHandler}
         />
         <br />
-        <Button type="submit" style={{ padding: 10, margin: 1 }}>
+        <button type="submit" style={{ padding: 10, margin: 1 }}>
           Register
-        </Button>
-        <Button
+        </button>
+        <button
           variant="warning"
           type="button"
           style={{ padding: 10, margin: 1 }}
           onClick={onClickHandler}
         >
           Back To Login
-        </Button>
+        </button>
       </form>
     </div>
   )

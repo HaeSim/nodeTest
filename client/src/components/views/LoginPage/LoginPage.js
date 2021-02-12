@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginUser, registerUser } from '../../../_actions/user_action'
 import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function LoginPage(props) {
   const dispatch = useDispatch()
@@ -55,10 +56,21 @@ function LoginPage(props) {
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />
-        <button type="submit">Login</button>
-        <button type="button" style={{ color: 'red' }} onClick={onClickHandler}>
+        <Button
+          variant="primary"
+          type="submit"
+          style={{ padding: 10, margin: 1 }}
+        >
+          Login
+        </Button>
+        <Button
+          variant="success"
+          type="button"
+          style={{ padding: 10, margin: 1 }}
+          onClick={onClickHandler}
+        >
           SignUp
-        </button>
+        </Button>
       </form>
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../../_actions/user_action'
 import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function RegisterPage(props) {
   const dispatch = useDispatch()
@@ -40,7 +41,8 @@ function RegisterPage(props) {
       if (response.payload.success) {
         props.history.push('/login')
       } else {
-        alert('Error : 회원가입 실패!!')
+        console.log(response.payload)
+        alert('Error : 회원가입 실패!! 메시지 : ', response.payload.err.message)
       }
     })
   }
@@ -80,10 +82,17 @@ function RegisterPage(props) {
           onChange={onConfirmPasswordHandler}
         />
         <br />
-        <button type="submit">Register</button>
-        <button type="button" style={{ color: 'red' }} onClick={onClickHandler}>
-          back To Login
-        </button>
+        <Button type="submit" style={{ padding: 10, margin: 1 }}>
+          Register
+        </Button>
+        <Button
+          variant="warning"
+          type="button"
+          style={{ padding: 10, margin: 1 }}
+          onClick={onClickHandler}
+        >
+          Back To Login
+        </Button>
       </form>
     </div>
   )

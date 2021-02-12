@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../../../_actions/user_action'
 import { withRouter } from 'react-router-dom'
+import { Button } from 'antd'
 
 function LoginPage(props) {
   const dispatch = useDispatch()
@@ -54,21 +55,17 @@ function LoginPage(props) {
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />
-        <button
-          variant="primary"
-          type="submit"
-          style={{ padding: 10, margin: 1 }}
-        >
+        <Button type="primary" htmlType="submit" style={{ margin: 1 }}>
           Login
-        </button>
-        <button
-          variant="success"
-          type="button"
-          style={{ padding: 10, margin: 1 }}
+        </Button>
+        <Button
+          danger
+          type="primary"
+          style={{ margin: 1 }}
           onClick={onClickHandler}
         >
           SignUp
-        </button>
+        </Button>
       </form>
     </div>
   )

@@ -14,14 +14,17 @@ export default function (SpecificComponent, option, adminRoute = null) {
         if (!response.payload.isAuth) {
           //로그인하지않은상태
           if (option) {
+            alert('please login :)')
             props.history.push('/login')
           }
         } else {
           //로그인한 상태
           if (adminRoute && !response.payload.isAdmin) {
+            alert('please logout :(')
             props.history.push('/landing')
           } else {
             if (!option) {
+              alert('please logout :(')
               props.history.push('/landing')
             }
           }

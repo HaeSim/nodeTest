@@ -7,6 +7,8 @@ import LoginPage from './views/LoginPage/LoginPage.js'
 import RegisterPage from './views/RegisterPage/RegisterPage.js'
 import NavBar from './views/NavBar/NavBar'
 import Footer from './views/Footer/Footer'
+import DiaryPage from './views/DiaryPage/DiaryPage'
+import 'antd/dist/antd.css'
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/landing" component={Auth(LandingPage, true)} />
+          <Route exact path="/diary" component={Auth(DiaryPage, true)} />
         </Switch>
       </div>
       <Footer />

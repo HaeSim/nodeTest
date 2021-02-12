@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { registerUser } from '../../../_actions/user_action'
 import { withRouter } from 'react-router-dom'
+import { Button } from 'antd'
 
 function RegisterPage(props) {
   const dispatch = useDispatch()
@@ -83,17 +84,17 @@ function RegisterPage(props) {
           onChange={onConfirmPasswordHandler}
         />
         <br />
-        <button type="submit" style={{ padding: 10, margin: 1 }}>
+        <Button type="primary" htmlType="submit" style={{ margin: 1 }}>
           Register
-        </button>
-        <button
-          variant="warning"
+        </Button>
+        <Button
+          danger
           type="button"
-          style={{ padding: 10, margin: 1 }}
+          style={{ margin: 1 }}
           onClick={onClickHandler}
         >
           Back To Login
-        </button>
+        </Button>
       </form>
     </div>
   )

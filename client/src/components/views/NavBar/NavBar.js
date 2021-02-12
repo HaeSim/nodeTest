@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import LeftMenu from './Sections/LeftMenu'
 import RightMenu from './Sections/RightMenu'
 import { Drawer, Button } from 'antd'
+import { HeartTwoTone } from '@ant-design/icons'
 import './Sections/Navbar.css'
 
 function NavBar() {
@@ -21,7 +22,8 @@ function NavBar() {
       style={{ position: 'fixed', zIndex: 1, width: '100%' }}
     >
       <div className="menu__logo">
-        <a href="/">Logo</a>
+        <HeartTwoTone />
+        <a href="/">HaeSim's</a>
       </div>
       <div className="menu__container">
         <div className="menu_left">

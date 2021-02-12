@@ -1,6 +1,4 @@
-import axios from 'axios'
 import React, { useEffect } from 'react'
-import Axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { auth } from '../_actions/user_action'
 
@@ -13,8 +11,6 @@ export default function (SpecificComponent, option, adminRoute = null) {
 
     useEffect(() => {
       dispatch(auth()).then(response => {
-        console.log(response)
-
         if (!response.payload.isAuth) {
           //로그인하지않은상태
           if (option) {

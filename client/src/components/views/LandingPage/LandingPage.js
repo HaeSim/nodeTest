@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function LandingPage(props) {
   const onClickHandler = () => {
@@ -25,7 +26,7 @@ function LandingPage(props) {
       }}
     >
       <h2 style={{ textAlign: 'center' }}>Welcome to Landing Page</h2>
-      <button onClick={onClickHandler}>Logout</button>
+      <Button onClick={onClickHandler}>Logout</Button>
     </div>
   )
 }

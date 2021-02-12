@@ -21,9 +21,11 @@ function RegisterPage(props) {
   const onPasswordHandler = event => {
     setPassword(event.currentTarget.value)
   }
+
   const onConfirmPasswordHandler = event => {
     setConfirmPassword(event.currentTarget.value)
   }
+
   const onSubmitHandler = event => {
     event.preventDefault() //페이지가 refresh되는 것 방지.
 
@@ -39,10 +41,10 @@ function RegisterPage(props) {
 
     dispatch(registerUser(body)).then(response => {
       if (response.payload.success) {
+        alert('회원가입에 성공하였습니다.')
         props.history.push('/login')
       } else {
-        console.log(response.payload)
-        alert('Error : 회원가입 실패!! 메시지 : ', response.payload.err.message)
+        alert('Error : 회원가입 실패!! 메시지 : ' + response.payload.err)
       }
     })
   }

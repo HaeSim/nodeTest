@@ -23,13 +23,6 @@ mongoose
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log('error!! : ' + err))
 
-app.get('/', (req, res) => res.send('Hell! 우왕 존나신기하다'))
-
-app.get('/api/hello', (req, res) => {
-  console.log('??')
-  res.send('안녕하세용ㅎㅎㅎㅎ~~~')
-})
-
 app.post('/api/users/register', (req, res) => {
   // 회원가입 할때 필요한 정보들을 client에서 가져오면
   // 그것들을 DB에 넣어준다.
@@ -93,4 +86,4 @@ app.get('/api/users/logout', auth, (req, res) => {
   })
 })
 
-app.listen(port, () => console.log(`이건 테스트 임 ${port}`))
+app.listen(port, () => console.log(`NODE.JS SERVER RUNNING... ${port}`))

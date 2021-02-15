@@ -1,8 +1,6 @@
 import * as types from '../_actions/types'
 
-const initialStates = { userData: null }
-
-export default function (state = initialStates, action) {
+export default function (state = {}, action) {
   switch (action.type) {
     case types.LOGIN_USER:
       return { ...state, loginSuccess: action.payload }
